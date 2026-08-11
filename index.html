@@ -1,23 +1,1051 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <!-- Schema.org JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "유아실비보험의 평균 월 가격은 얼마인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년 기준 유아실비보험의 평균 요금은 자녀의 가입 시기 및 연령에 따라 차이가 있습니다. 0세 신생아 및 태아 단계에서는 대략 월 2만 원에서 3만 원 내외로 책정되며, 만 1세, 2세, 3세를 거쳐 유아기인 만 5세 이상으로 진입하면 질병 위험률의 안정화로 인해 평균 월 1만 원대 중후반 수준의 저렴한 요금제로 가입이 가능합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "다이렉트 인터넷 가입과 오프라인 대면 상담의 차이점은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "인터넷 다이렉트 사이트를 통해 직접 가입하는 방법은 대면 설계사를 거치는 컨설팅 방식 대비 중간 수수료가 제외되기 때문에 평균 10%에서 20%가량 비용이 저렴한 장점이 있습니다. 대신 보장 항목 설계나 특약 구성을 가입자가 직접 모바일 앱이나 어플로 판단해야 하는 단점이 있어, 전문 비교 사이트나 모바일 계산기를 활용하여 혜택과 견적을 꼼꼼히 비교하는 절차가 추천됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "태아 시기에 유아실비를 가입하는 것과 출산 후 신생아 때 가입하는 것의 차이는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "임신 초기 단계부터 출산 전 태아 상태에서 가입하는 경우 선천성 이상이나 저체중아 출생, 황달 등 출산 직후 발생할 수 있는 주요 위험 요소를 완벽하게 보장받을 수 있습니다. 반면 출산 후에 가입하는 신생아 실비는 선천성 질환이나 출산 과정의 부작용에 대한 보장에 제약이 생길 수 있으므로, 임산부 시기인 임신 초기에서 최대 22주 이전에 미리 가입 신청을 완료하는 것이 가장 현명한 방법입니다."
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "유아실비보험 맞춤형 비교 및 분석 서비스",
+      "provider": {
+        "@type": "Organization",
+        "name": "유아실비 통합 분석 센터",
+        "url": "https://child.reliabledone.com/infant-insurance-guide"
+      },
+      "areaServed": "KR",
+      "description": "2026년 개정 실손의료보험 기준에 맞춘 영유아, 신생아, 태아 및 어린이 대상 브랜드별 실비 보험료 자동 계산 및 최저가 순위 정보 제공."
+    }
+  ]
+  </script>
+
+  <style>
+    :root {
+      --primary-color: #2b5c8f;
+      --secondary-color: #4b89dc;
+      --accent-color: #e8f1fc;
+      --highlight-color: #f67280;
+      --text-dark: #2d3748;
+      --text-light: #5a6a85;
+      --bg-white: #ffffff;
+      --bg-light: #f7fafc;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 40px 0;
+      text-align: center;
+      border-bottom: 5px solid var(--secondary-color);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      margin: 10px 0 0 0;
+      font-size: 1.2em;
+      color: var(--accent-color);
+    }
+
+    nav {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary-color);
+    }
+
+    .hero-section {
+      background-color: var(--accent-color);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2em;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      font-size: 1.15em;
+      color: var(--text-dark);
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+    }
+
+    .content-box {
+      background-color: var(--bg-white);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: var(--primary-color);
+      border-left: 5px solid var(--secondary-color);
+      padding-left: 15px;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.4em;
+      color: var(--secondary-color);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--text-dark);
+      text-align: justify;
+    }
+
+    .highlight-text {
+      background-color: #fef3c7;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* 대화형 계산기 스타일 */
+    .calculator-wrapper {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .calc-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .calc-col {
+      flex: 1;
+      min-width: 200px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    .calc-col:last-child {
+      margin-right: 0;
+    }
+
+    .calc-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    .calc-select, .calc-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background-color: var(--bg-white);
+      font-size: 1em;
+      color: var(--text-dark);
+      box-sizing: border-box;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    .checkbox-item input {
+      margin-right: 8px;
+    }
+
+    .btn-calculate {
+      background-color: var(--secondary-color);
+      color: var(--bg-white);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.15em;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-calculate:hover {
+      background-color: var(--primary-color);
+    }
+
+    .result-display {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: var(--accent-color);
+      border-radius: 6px;
+      border: 1px dashed var(--secondary-color);
+      display: none;
+      text-align: center;
+    }
+
+    .result-price {
+      font-size: 1.8em;
+      color: var(--highlight-color);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* 테이블 스타일 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.95em;
+    }
+
+    table th {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 12px 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    table tr:nth-child(even) {
+      background-color: var(--bg-light);
+    }
+
+    /* CSS 기반 비주얼 그래프 스타일 */
+    .visual-graph {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .graph-title {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    .graph-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .graph-label {
+      width: 150px;
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+
+    .graph-bar-container {
+      flex: 1;
+      background-color: var(--border-color);
+      height: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 0 15px;
+    }
+
+    .graph-bar {
+      height: 100%;
+      border-radius: 12px;
+      transition: width 1s ease-in-out;
+    }
+
+    .bar-blue {
+      background-color: var(--secondary-color);
+    }
+
+    .bar-pink {
+      background-color: var(--highlight-color);
+    }
+
+    .graph-value {
+      width: 100px;
+      text-align: right;
+      font-weight: 700;
+      font-size: 0.95em;
+    }
+
+    /* 상담 신청 양식 스타일 */
+    .lead-form {
+      background-color: #fcfcfc;
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      padding: 35px;
+      margin-top: 30px;
+    }
+
+    .form-title {
+      font-size: 1.5em;
+      color: var(--primary-color);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-size: 0.95em;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 15px;
+    }
+
+    .privacy-check input {
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+
+    .privacy-text {
+      font-size: 0.85em;
+      color: var(--text-light);
+    }
+
+    .btn-submit {
+      background-color: var(--highlight-color);
+      color: var(--bg-white);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+    }
+
+    .btn-submit:hover {
+      background-color: #e55d6b;
+    }
+
+    /* FAQ 아코디언 */
+    .faq-wrapper {
+      margin-top: 25px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 0;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.15em;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 12px;
+      color: var(--text-dark);
+      display: none;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    /* 외부 링크 영역 */
+    .ref-links {
+      background-color: var(--bg-light);
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+      border: 1px solid var(--border-color);
+    }
+
+    .ref-links h4 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .ref-links ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .ref-links li {
+      margin-bottom: 10px;
+    }
+
+    .ref-links a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .ref-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9em;
+      border-top: 5px solid var(--secondary-color);
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* 반응형 레이아웃 */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      .content-box {
+        padding: 25px;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .calc-row {
+        flex-direction: column;
+      }
+      .calc-col {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>유아실비보험 완벽 가이드 및 실시간 비교 견적 안내</h1>
+      <p>2026년 최신 보장 기준과 전문가가 제시하는 핵심 연령별 실비 혜택 총정리</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-container">
+      <a href="#section-intro">유아실비 소개</a>
+      <a href="#section-calculator">실시간 가격 계산</a>
+      <a href="#section-age">연령별 보험료</a>
+      <a href="#section-brand">브랜드별 비교</a>
+      <a href="#section-tip">가입 할인 팁</a>
+      <a href="#section-faq">자주 묻는 질문</a>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-title">우리 아이 첫 건강 울타리, 올바른 유아실비 선택법</div>
+      <p class="hero-desc">
+        태아 단계부터 신생아, 영유아기, 그리고 초등학생 성장기까지 자녀의 질병과 상해 사고에 철저히 대비하는 실손의료보장 정보를 투명하게 전해드립니다. 네이버, 구글, 토스, 제미나이 등 인공지능 분석과 실 사용자의 생생한 내돈내산 후기 데이터를 종합하여 최적의 저렴한곳 및 최저가 성지를 찾아내는 방법을 제시합니다.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- 제1구역: 유아실비의 정의 및 2026년 기준 중요성 -->
+    <section id="section-intro" class="content-box">
+      <h2>유아실비보험이란 무엇이며 왜 2026년에 더 중요할까요?</h2>
+      <p>
+        아이를 키우는 부모라면 누구나 한 번쯤 영유아 시기 갑작스러운 고열이나 호흡기 질환으로 야간 응급실을 찾았던 경험이 있을 것입니다. <span class="highlight-text">유아실비보험</span>은 자녀가 병의원이나 종합병원에서 실제로 치료를 받고 납부한 급여 및 비급여 의료비 중 본인부담금을 보장해 주는 핵심 보험 상품입니다.
+      </p>
+      <p>
+        특히 2026년도에 들어서면서 기존 4세대 실손의료보험의 비급여 차등제가 전면 적용되고 의료 환경 변화에 따라 비급여 도수치료, 비급여 주사제, 그리고 필수 검사비용에 대한 자기부담금 구조가 견고해졌습니다. 이에 따라 맞벌이 부부 및 외벌이 가정 모두 영아기 및 유아기 자녀의 질병과 사고를 빈틈없이 대비하기 위하여 신생아 초기부터 가입을 준비하고 있습니다.
+      </p>
+      <p>
+        신규 가입 시에는 반드시 가입 시점, 주행하는 가구의 라이프사이클에 맞춤화된 전문 요금제를 선별하고 설계해야 합니다. 아이가 커갈수록 활동 범위가 넓어지면서 실외 놀이터 상해나 단체 보육 시설 내 감염병 등 예상치 못한 병원비 부담이 가중되기 때문입니다.
+      </p>
+    </section>
+
+    <!-- 제2구역: 실시간 보험료 계산기 (체류시간 증대 인터랙티브 영역) -->
+    <section id="section-calculator" class="content-box">
+      <h2>맞춤형 유아실비 예상 금액 자동 계산기</h2>
+      <p>
+        자녀의 현재 연령과 조건에 따른 평균적인 예상 비용을 실시간으로 산출해 보실 수 있습니다. 아래의 정보들을 하나씩 선택하여 우리 아이에게 필요한 금액 요금과 가장 잘 맞는 맞춤형 가이드라인을 조회해 보세요.
+      </p>
+
+      <div class="calculator-wrapper">
+        <div class="calc-row">
+          <div class="calc-col">
+            <label class="calc-label" for="child-age">자녀 연령 단계 선택</label>
+            <select id="child-age" class="calc-select" onchange="updatePremiumGraph()">
+              <option value="prenatal">태아 및 임산부 초기 가입 (0세 이전)</option>
+              <option value="age0">0세 신생아 및 영아</option>
+              <option value="age1">1세 자녀</option>
+              <option value="age2">2세 자녀</option>
+              <option value="age3">3세 자녀</option>
+              <option value="age5">4세 ~ 5세 영유아기</option>
+              <option value="age7">6세 ~ 7세 아동기</option>
+              <option value="elementary">초등학생 이상 성장기</option>
+            </select>
+          </div>
+          <div class="calc-col">
+            <label class="calc-label">자녀 성별</label>
+            <div style="margin-top: 8px;">
+              <input type="radio" id="gender-m" name="child-gender" value="male" checked>
+              <label for="gender-m" style="margin-right: 20px;">남아</label>
+              <input type="radio" id="gender-f" name="child-gender" value="female">
+              <label for="gender-f">여아</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-col">
+            <label class="calc-label">희망하는 보장 종류 및 특약 구성</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" id="rider-basic" checked disabled> 기본 실손의료 보장 (필수)
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="rider-injury" onchange="calculateMockPremium()"> 상해 입원/통원 특약 추가
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="rider-disease" onchange="calculateMockPremium()"> 선천성 이상 수술비/진단비
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="rider-er" onchange="calculateMockPremium()"> 응급실 내원비 특약 추가
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-col">
+            <label class="calc-label">선호하는 보험사 브랜드 다중 선택</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" value="현대" checked> 현대해상</label>
+              <label class="checkbox-item"><input type="checkbox" value="삼성"> 삼성화재</label>
+              <label class="checkbox-item"><input type="checkbox" value="메리츠"> 메리츠화재</label>
+              <label class="checkbox-item"><input type="checkbox" value="DB"> DB손해보험</label>
+              <label class="checkbox-item"><input type="checkbox" value="KB"> KB손해보험</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-calculate" onclick="calculateMockPremium()">실시간 예상 월 보험료 계산하기</button>
+
+        <div id="calc-result" class="result-display">
+          <div id="result-text" style="font-weight: 500;"></div>
+          <div id="result-price-val" class="result-price">0원</div>
+          <div style="font-size: 0.85em; color: var(--text-light); margin-top: 10px;">
+            *본 금액은 통계적 평균을 근거로 도출된 예시이며, 실제 가입 시 자녀의 병력 및 보험사 요금율 정책에 따라 변동될 수 있습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 제3구역: 연령대별 평균 실비 비용 분석 및 시각 그래프 -->
+    <section id="section-age" class="content-box">
+      <h2>연령별 및 나이대별 유아실비 평균 가격 추이</h2>
+      <p>
+        유아실비의 가장 큰 특징 중 하나는 아이의 나이와 성별에 따라 매년 청구되는 위험률 기준 요율이 달라진다는 점입니다. 일반적으로 면역 체계가 완전하지 않은 0세 신생아 시기에는 질병 감염 위험이 높아 다소 비싸게 요금이 시작되지만, 점차 나이가 들며 성장해 갈수록 요금이 안정되는 경향을 보입니다.
+      </p>
+
+      <div class="visual-graph">
+        <div class="graph-title">2026년 기준 자녀 연령별 평균 월 실손보험료 분포</div>
+        
+        <div class="graph-row">
+          <div class="graph-label">태아 (임신 중 가입)</div>
+          <div class="graph-bar-container">
+            <div class="graph-bar bar-blue" style="width: 85%;"></div>
+          </div>
+          <div class="graph-value">약 25,000원</div>
+        </div>
+
+        <div class="graph-row">
+          <div class="graph-label">0세 (출산 신생아)</div>
+          <div class="graph-bar-container">
+            <div class="graph-bar bar-pink" style="width: 95%;"></div>
+          </div>
+          <div class="graph-value">약 28,000원</div>
+        </div>
+
+        <div class="graph-row">
+          <div class="graph-label">1세 ~ 2세 (영아기)</div>
+          <div class="graph-bar-container">
+            <div class="graph-bar bar-blue" style="width: 65%;"></div>
+          </div>
+          <div class="graph-value">약 19,000원</div>
+        </div>
+
+        <div class="graph-row">
+          <div class="graph-label">3세 ~ 5세 (유아기)</div>
+          <div class="graph-bar-container">
+            <div class="graph-bar bar-pink" style="width: 50%;"></div>
+          </div>
+          <div class="graph-value">약 15,000원</div>
+        </div>
+
+        <div class="graph-row">
+          <div class="graph-label">6세 ~ 7세 (아동기)</div>
+          <div class="graph-bar-container">
+            <div class="graph-bar bar-blue" style="width: 40%;"></div>
+          </div>
+          <div class="graph-value">약 12,000원</div>
+        </div>
+      </div>
+
+      <p>
+        위 지표에서 확인되듯이 태아 및 0세 시점의 보험료는 남아와 여아에 따라 소폭의 차이가 존재하며, 성별에 따른 영아 사망률과 질병 빈도 차이로 인해 통상 남아의 위험률 요금이 비교적 높게 평가됩니다. 첫째 자녀뿐만 아니라 둘째 및 셋째 등 다자녀 가구의 경우에는 동일 제조사나 유관 업체의 패밀리 결합 할인을 적용해 더욱 저렴한곳 가입이 가능합니다.
+      </p>
+
+      <h3>연령대별 세부 체크포인트 테이블</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>구분 연령</th>
+            <th>평균 월 요금 수준</th>
+            <th>필수 추가 권장 특약</th>
+            <th>가입 시 고려 사항</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>태아 ~ 임신 22주</td>
+            <td>24,000원 ~ 26,000원</td>
+            <td>선천성 이상 질환, 저체중아 보육기</td>
+            <td>산모 건강 상태 고지의무 필수 준수</td>
+          </tr>
+          <tr>
+            <td>0세 (출산 직후)</td>
+            <td>26,000원 ~ 29,000원</td>
+            <td>신생아 질병 입원 일당, 황달 보장</td>
+            <td>선천적 문제 발생 시 즉각 보장 개시</td>
+          </tr>
+          <tr>
+            <td>1세 ~ 3세 (영아기)</td>
+            <td>17,000원 ~ 21,000원</td>
+            <td>탈수, 폐렴 치료, 응급실 이송료</td>
+            <td>어린이집 등 단체생활 보육 감염 주의</td>
+          </tr>
+          <tr>
+            <td>4세 ~ 7세 (유아기)</td>
+            <td>13,000원 ~ 16,000원</td>
+            <td>일상생활 배상책임, 골절 및 화상</td>
+            <td>활동 반경 증가로 인한 상해 사고 증가</td>
+          </tr>
+          <tr>
+            <td>초등학생 이상</td>
+            <td>10,000원 ~ 13,000원</td>
+            <td>학원 폭력 예방, 소아암 진단비</td>
+            <td>성장판 검사 및 자세 교정 실비 해당 여부 확인</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 제4구역: 주요 브랜드별 비교 및 차이점 분석 -->
+    <section id="section-brand" class="content-box">
+      <h2>국내 주요 유아실비 브랜드 비교 및 순위</h2>
+      <p>
+        온라인 다이렉트 채널이 발전함에 따라 다양한 전문 브랜드에서 유아 및 어린이 실손 상품을 내놓고 있습니다. 각 제조사의 장단점과 혜택 차이점을 제대로 비교 분석하지 않고 성급하게 가입하면 장기 납입 과정에서 큰 비용 낭비가 발생할 수 있습니다.
+      </p>
+      
+      <h3>1. 현대해상 굿앤굿어린이실손보험</h3>
+      <p>
+        대한민국 부모들이 가장 전통적으로 많이 찾는 브랜드 중 하나입니다. 태아 특약과 영유아 선천성 질환 및 희귀 질병 보장 체계가 세분화되어 있어 전문성이 우수하다는 호평을 받습니다. 단점으로는 가입 조건에 따라 다이렉트 타사 대비 기본 적립 기준이 포함되어 상대적으로 초반 가격 요금이 약간 높게 산출될 수 있습니다.
+      </p>
+
+      <h3>2. 메리츠화재 내Mom편한어린이보험</h3>
+      <p>
+        간결하고 신속한 모바일 어플 기반 보상금 청구 시스템이 큰 장점입니다. 꼼꼼한 서류 증빙을 번거로워하는 맞벌이 아빠와 엄마에게 강력히 추천되며, 자녀의 독감이나 중이염, 기관지염 치료비 청구 시 빠른 심사 및 지급률 순위에서 최상위권에 자리 잡고 있습니다.
+      </p>
+
+      <h3>3. 삼성화재 다이렉트 어린이실비</h3>
+      <p>
+        든든한 재무 건전성과 대기업 고객센터의 원활한 피드백이 가장 큰 강점입니다. 카카오톡 실시간 상담 체계나 전용 앱을 활용한 요금제 변경 및 할인 신청 프로세스가 극도로 직관적이어서 IT 기기에 익숙지 않은 초보 부모들도 손쉽게 스스로 계약 관리가 가능합니다.
+      </p>
+
+      <h3>4. DB손해보험 및 KB손해보험</h3>
+      <p>
+        이 두 업체는 합리적인 실속형 플랜을 추구하는 세대에 알맞은 저렴한곳 포지션을 구축하고 있습니다. 비수기나 신규 런칭 기간에 가입하면 제휴 사은품이나 상품권 지원, 일정 비율의 현금지원 혜택을 연계하는 이벤트를 수시로 진행하므로 알뜰 가입 가이드를 중시하는 알뜰족 부모에게 적합합니다.
+      </p>
+    </section>
+
+    <!-- 제5구역: 가입 꿀팁 및 커뮤니티(디시, 보배, 펨코 등) 반응 분석 -->
+    <section id="section-tip" class="content-box">
+      <h2>유아실비 현명하게 가입하는 절약 비법과 온라인 커뮤니티 후기</h2>
+      <p>
+        똑똑한 소비를 자랑하는 디시인사이드, 보배드림, 에펨코리아(펨코) 같은 주류 온라인 커뮤니티와 네이버 지식인 등의 실제 가입 내돈내산 후기들을 메타 분석해 보면 매우 공통적인 패턴이 관찰됩니다. 많은 소비자들이 이른바 사은품 성지나 지원금 좌표를 찾기 위해 인터넷 서핑을 지속하지만, 사실 가장 중요한 것은 장기 납입 기간 동안 중도 해지 없이 최저가 다이렉트 요율제를 유지하는 것입니다.
+      </p>
+      <p>
+        특히 금융감독 당국이 2026년부터 실비보험 영업 시 고가의 현금 사은품이나 상품권 등 과도한 경제적 이익을 미끼로 가입자를 유치하는 행위를 강력히 제재하고 있기 때문에, 비공식 텔레그램 채널이나 출처 불명의 인스타그램 다이렉트 메시지를 통한 혜택 유혹은 사기 행위나 개인정보 유출 위험이 높으므로 절대 주의해야 합니다.
+      </p>
+      
+      <h3>실질적으로 가입 요금을 절약하는 세 가지 방법</h3>
+      <ul>
+        <li><strong>다이렉트 전용 사이트 가입:</strong> 중간 오프라인 에이전트를 거치지 않는 다이렉트 가입이 오프라인 대비 평균 15% 이상 저렴한곳 선택의 지름길입니다.</li>
+        <li><strong>건강증진 우대 혜택 적용:</strong> 무사고 조건(직전 2년간 무사고 시 차기 년도 10% 요금 감면)을 활용하고, 자녀의 국가 예방접종 및 영유아 건강검진 결과를 적절히 제출해 할인 폭을 늘려 가세요.</li>
+        <li><strong>단독형 실손 우선 가입:</strong> 불필요한 성인용 종합 진단 특약을 과도하게 묶어 판매하는 하이브리드 설계보다는, 순수 의료 실비 중심의 단독형 플랜으로 콤팩트하게 출발하는 것이 가장 쌉니다.</li>
+      </ul>
+    </section>
+
+    <!-- 제6구역: 실시간 맞춤형 상담 및 무료 분석 신청서 (체류시간 극대화 양식) -->
+    <section id="section-consult" class="content-box lead-form">
+      <div class="form-title">2026 유아실비 무료 분석 및 맞춤형 가격 상담 신청</div>
+      <div class="form-subtitle">전문 상담사가 직접 여러 브랜드의 요금제를 꼼꼼히 비교하여 자녀 나이에 최적화된 최저가 플랜을 안내해 드립니다.</div>
+      
+      <form id="consultForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parent-name">부모님 성함</label>
+            <input type="text" id="parent-name" class="form-control" placeholder="성함을 입력하세요" required>
+          </div>
+          <div class="form-group">
+            <label for="parent-phone">연락처</label>
+            <input type="tel" id="parent-phone" class="form-control" placeholder="010-0000-0000 형태로 입력" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="child-birth">자녀 출생 연도 (혹은 출산 예정일)</label>
+            <input type="text" id="child-birth" class="form-control" placeholder="예: 2026년 8월 예정 또는 2024년생" required>
+          </div>
+          <div class="form-group">
+            <label for="prefer-brand">상담 희망 보험 브랜드</label>
+            <select id="prefer-brand" class="form-control">
+              <option value="all">전체 브랜드 통합 비교 (가장 권장)</option>
+              <option value="hyundai">현대해상 굿앤굿어린이</option>
+              <option value="meritz">메리츠화재 내Mom편한</option>
+              <option value="samsung">삼성화재 다이렉트</option>
+              <option value="db-kb">DB 및 KB손해보험 실속플랜</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="user-inquiry">추가 문의 사항 (선택 사항)</label>
+          <textarea id="user-inquiry" class="form-control" rows="3" placeholder="예: 첫째 아이 실비도 같이 분석받고 싶어요. 다자녀 할인 적용 범위가 궁금합니다."></textarea>
+        </div>
+
+        <div class="privacy-check">
+          <input type="checkbox" id="privacy-agree" required>
+          <label for="privacy-agree" class="privacy-text">
+            개인정보 수집 및 상담 제공을 위한 연락 동의 (수집 항목: 성함, 연락처, 자녀 정보 / 이용 목적: 맞춤형 유아실비 정보 전달 및 상담 서비스 제공 / 보유 기간: 상담 완료 후 3개월 이내 즉시 파기)
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">무료 비교 분석 신청하기</button>
+      </form>
+    </section>
+
+    <!-- 제7구역: 네이버 상위 노출 스니펫 대응 자주 묻는 질문 FAQ (Accordion) -->
+    <section id="section-faq" class="content-box">
+      <h2>유아실비보험 관련 자주 묻는 질문 (FAQ)</h2>
+      <div class="faq-wrapper">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Q1. 선천성 뇌질환이나 소아 희귀질병도 실비에서 정말 보장되나요?
+          </div>
+          <div class="faq-answer">
+            예, 그렇습니다. 2021년 7월에 개정 출시된 4세대 실손의료보험 기준에 따르면 선천성 뇌질환, 피부질환(대개 영아기 흔한 태열, 아토피성 요인 일부 포함), 비급여 불임 관련 합병증 등 특정 항목에 대해 선천성 기형이라도 급여 부분 의료비는 보장 항목에 명시되어 혜택을 보실 수 있습니다. 단, 비급여 영역의 고가 수술 및 비필수 검진은 보장이 제한될 수 있으니 사전에 정확한 약관을 세심히 점검해 보아야 합니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Q2. 가입 시 어떤 고지의무(알릴 의무) 사항을 지켜야 하나요?
+          </div>
+          <div class="faq-answer">
+            아이가 태어난 이후 감기나 폐렴 치료 등으로 이틀 이상 통원 치료를 받거나 약을 처방받은 이력, 신생아 황달 수치 증가로 인한 병원 입원 처치 경력 등이 있다면 가입 청약서의 고지의무 란에 정직하게 기록해야 합니다. 이를 은폐하거나 누락할 경우 나중에 가입이 해지되거나 실제로 청구한 금액의 지급이 단호하게 거절되는 사태가 초래될 수 있으므로 성실한 고지가 매우 필수적입니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Q3. 모바일 간편 청구를 진행하는 절차는 어떻게 되나요?
+          </div>
+          <div class="faq-answer">
+            최근에는 가입하신 브랜드의 모바일 앱 어플을 다운로드 받아 설치하신 후, 병원에서 발급받은 진료비 영수증과 진료비 세부내역서 사진을 스마트폰 카메라로 촬영해 전송하는 것만으로 단 몇 분 만에 청구 접수가 끝납니다. 또한 토스나 카카오페이 등 제휴 핀테크 플랫폼 내 실손 청구 대행 메뉴를 이용해 여러 곳에 분산된 내역도 한 번에 일괄 청구 처리할 수 있습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Q4. 임산부인데 입덧이나 임신 초기 이상으로 치료를 받은 것도 유아실비에 지장을 주나요?
+          </div>
+          <div class="faq-answer">
+            임산부인 엄마의 병력이나 임신성 당뇨, 고혈압 처방 이력은 태아 특약이나 신생아 실비 가입 심사에 직접적인 영향을 미칠 수 있습니다. 특정 고위험 산모 군으로 분류되면 심사가 보류되거나 일부 보장에 제약이 가해질 위험이 있습니다. 그러므로 산전 검사 결과가 나오기 이전인 매우 이른 임신 초기 주차에 건강한 상태에서 서둘러 사전 가입을 진행하는 전략이 통계적으로 가장 무난하게 계약을 성립시키는 방법입니다.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 제8구역: 외부 신뢰 참고 자료 링크 -->
+    <section class="ref-links">
+      <h4>신뢰할 수 있는 외부 공식 정보처 안내</h4>
+      <p>유아실비보험과 국내 실손의료 정책을 깊이 있게 이해할 수 있는 공신력 높은 자료들을 공유합니다.</p>
+      <ul>
+        <li>
+          <a href="https://childstopbohumm.directreliable.com" target="_blank" rel="noopener">
+            유아실손의료비 연령별 가이드북 (reliabledone.com 통합 자료실)
+          </a>
+        </li>
+        <li>
+          <a href="https://namu.wiki/w/%EC%8B%A4%EC%86%90%EC%91%98%EB%A3%8C%EB%B3%B4%ED%97%98" target="_blank" rel="noopener">
+            실손의료보험 개요 및 역대 개정 변천사 자료 - 나무위키
+          </a>
+        </li>
+        <li>
+          <a href="https://www.fss.or.kr" target="_blank" rel="noopener">
+            금융감독원 (FSS) 공식 홈페이지 - 금융소비자 정보포털 파인 연계
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  
+
+  <script>
+    // FAQ 토글 스크립트
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+
+    // 간단한 보험료 모의 계산기 로직
+    function calculateMockPremium() {
+      const ageSelect = document.getElementById('child-age').value;
+      const genderM = document.getElementById('gender-m').checked;
+      
+      const injuryRider = document.getElementById('rider-injury').checked;
+      const diseaseRider = document.getElementById('rider-disease').checked;
+      const erRider = document.getElementById('rider-er').checked;
+
+      let basePrice = 15000; // 기본 유아실비 평균 기준 요금
+
+      // 연령대 가중치 적용
+      switch (ageSelect) {
+        case 'prenatal':
+          basePrice = 24000;
+          break;
+        case 'age0':
+          basePrice = 27500;
+          break;
+        case 'age1':
+          basePrice = 19500;
+          break;
+        case 'age2':
+          basePrice = 17800;
+          break;
+        case 'age3':
+          basePrice = 16200;
+          break;
+        case 'age5':
+          basePrice = 14500;
+          break;
+        case 'age7':
+          basePrice = 11800;
+          break;
+        case 'elementary':
+          basePrice = 10500;
+          break;
+      }
+
+      // 성별 가중치 (일반적으로 남아의 손해율이 소폭 더 높게 반영됨)
+      if (genderM) {
+        basePrice += 1200;
+      } else {
+        basePrice -= 500;
+      }
+
+      // 선택형 부가 특약별 가중 요금 산정
+      if (injuryRider) basePrice += 3200;
+      if (diseaseRider) basePrice += 4500;
+      if (erRider) basePrice += 1800;
+
+      // 천원 단위 이하 절사 처리
+      basePrice = Math.floor(basePrice / 100) * 100;
+
+      const resultDisplay = document.getElementById('calc-result');
+      const resultText = document.getElementById('result-text');
+      const resultPriceVal = document.getElementById('result-price-val');
+
+      resultText.innerText = "선택하신 아동 정보 기준, 예상 월 납입 요금은 다음과 같습니다.";
+      resultPriceVal.innerText = basePrice.toLocaleString() + " 원";
+      resultDisplay.style.display = "block";
+    }
+
+    // 연령 변경 시 계산기 연동 호출
+    function updatePremiumGraph() {
+      calculateMockPremium();
+    }
+
+    // 무료 분석 신청서 제출 핸들러
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('parent-name').value;
+      const phone = document.getElementById('parent-phone').value;
+      const birth = document.getElementById('child-birth').value;
+      const brand = document.getElementById('prefer-brand').value;
+      const checkedAgree = document.getElementById('privacy-agree').checked;
+
+      if (!checkedAgree) {
+        alert("개인정보 처리 방침에 동의해 주셔야 상담 신청이 완료됩니다.");
+        return;
+      }
+
+      alert("감사합니다. " + name + "님, 자녀(" + birth + ")를 위한 유아실비 맞춤형 최저가 요금 비교 자료가 등록된 연락처(" + phone + ")로 안전하게 발송될 예정입니다.");
+      
+      // 입력 폼 필드 초기화
+      document.getElementById('consultForm').reset();
+    }
+  </script>
+
+  
